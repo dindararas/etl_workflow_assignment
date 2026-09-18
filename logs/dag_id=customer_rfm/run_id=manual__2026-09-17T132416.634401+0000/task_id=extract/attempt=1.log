@@ -1,0 +1,21 @@
+[2026-09-17T13:24:18.236+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-09-17T13:24:18.262+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: customer_rfm.extract manual__2026-09-17T13:24:16.634401+00:00 [queued]>
+[2026-09-17T13:24:18.268+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: customer_rfm.extract manual__2026-09-17T13:24:16.634401+00:00 [queued]>
+[2026-09-17T13:24:18.269+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 2
+[2026-09-17T13:24:18.277+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): extract> on 2026-09-17 13:24:16.634401+00:00
+[2026-09-17T13:24:18.282+0000] {logging_mixin.py:188} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/task/task_runner/standard_task_runner.py:62 DeprecationWarning: This process (pid=393) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2026-09-17T13:24:18.284+0000] {standard_task_runner.py:64} INFO - Started process 394 to run task
+[2026-09-17T13:24:18.283+0000] {standard_task_runner.py:90} INFO - Running: ['airflow', 'tasks', 'run', 'customer_rfm', 'extract', 'manual__2026-09-17T13:24:16.634401+00:00', '--job-id', '30', '--raw', '--subdir', 'DAGS_FOLDER/dag_customer_rfm_dinda_c.py', '--cfg-path', '/tmp/tmpocm6wwcv']
+[2026-09-17T13:24:18.284+0000] {standard_task_runner.py:91} INFO - Job 30: Subtask extract
+[2026-09-17T13:24:18.296+0000] {logging_mixin.py:188} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/settings.py:195 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2026-09-17T13:24:18.329+0000] {task_command.py:426} INFO - Running <TaskInstance: customer_rfm.extract manual__2026-09-17T13:24:16.634401+00:00 [running]> on host 682a1b4f7f24
+[2026-09-17T13:24:18.395+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='customer_rfm' AIRFLOW_CTX_TASK_ID='extract' AIRFLOW_CTX_EXECUTION_DATE='2026-09-17T13:24:16.634401+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-09-17T13:24:16.634401+00:00'
+[2026-09-17T13:24:18.396+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-09-17T13:24:18.419+0000] {base.py:84} INFO - Using connection ID 'adventure_works' for task execution.
+[2026-09-17T13:24:18.801+0000] {logging_mixin.py:188} INFO - [extract] stg_customer_orders has been extracted
+[2026-09-17T13:24:18.801+0000] {python.py:237} INFO - Done. Returned value was: None
+[2026-09-17T13:24:18.802+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-09-17T13:24:18.812+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=customer_rfm, task_id=extract, run_id=manual__2026-09-17T13:24:16.634401+00:00, execution_date=20260917T132416, start_date=20260917T132418, end_date=20260917T132418
+[2026-09-17T13:24:18.858+0000] {local_task_job_runner.py:243} INFO - Task exited with return code 0
+[2026-09-17T13:24:18.880+0000] {taskinstance.py:3503} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2026-09-17T13:24:18.882+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

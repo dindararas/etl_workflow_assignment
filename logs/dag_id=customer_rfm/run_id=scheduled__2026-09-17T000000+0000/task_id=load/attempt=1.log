@@ -1,0 +1,21 @@
+[2026-09-18T13:02:11.940+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-09-18T13:02:11.965+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: customer_rfm.load scheduled__2026-09-17T00:00:00+00:00 [queued]>
+[2026-09-18T13:02:11.971+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: customer_rfm.load scheduled__2026-09-17T00:00:00+00:00 [queued]>
+[2026-09-18T13:02:11.972+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 2
+[2026-09-18T13:02:11.980+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): load> on 2026-09-17 00:00:00+00:00
+[2026-09-18T13:02:11.984+0000] {logging_mixin.py:188} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/task/task_runner/standard_task_runner.py:62 DeprecationWarning: This process (pid=207) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2026-09-18T13:02:11.985+0000] {standard_task_runner.py:64} INFO - Started process 208 to run task
+[2026-09-18T13:02:11.984+0000] {standard_task_runner.py:90} INFO - Running: ['airflow', 'tasks', 'run', 'customer_rfm', 'load', 'scheduled__2026-09-17T00:00:00+00:00', '--job-id', '45', '--raw', '--subdir', 'DAGS_FOLDER/dag_customer_rfm_dinda_c.py', '--cfg-path', '/tmp/tmpad_jcc27']
+[2026-09-18T13:02:11.986+0000] {standard_task_runner.py:91} INFO - Job 45: Subtask load
+[2026-09-18T13:02:11.999+0000] {logging_mixin.py:188} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/settings.py:195 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2026-09-18T13:02:12.030+0000] {task_command.py:426} INFO - Running <TaskInstance: customer_rfm.load scheduled__2026-09-17T00:00:00+00:00 [running]> on host 682a1b4f7f24
+[2026-09-18T13:02:12.094+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='customer_rfm' AIRFLOW_CTX_TASK_ID='load' AIRFLOW_CTX_EXECUTION_DATE='2026-09-17T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-09-17T00:00:00+00:00'
+[2026-09-18T13:02:12.095+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-09-18T13:02:12.116+0000] {base.py:84} INFO - Using connection ID 'adventure_works' for task execution.
+[2026-09-18T13:02:12.148+0000] {logging_mixin.py:188} INFO - [load] Successfully load 7993 rows to dwh.fact_customer_rfm.
+[2026-09-18T13:02:12.149+0000] {python.py:237} INFO - Done. Returned value was: None
+[2026-09-18T13:02:12.149+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-09-18T13:02:12.158+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=customer_rfm, task_id=load, run_id=scheduled__2026-09-17T00:00:00+00:00, execution_date=20260917T000000, start_date=20260918T130211, end_date=20260918T130212
+[2026-09-18T13:02:12.198+0000] {local_task_job_runner.py:243} INFO - Task exited with return code 0
+[2026-09-18T13:02:12.214+0000] {taskinstance.py:3503} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-09-18T13:02:12.215+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

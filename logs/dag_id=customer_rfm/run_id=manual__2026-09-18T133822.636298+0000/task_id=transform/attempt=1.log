@@ -1,0 +1,52 @@
+[2026-09-18T13:38:25.497+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-09-18T13:38:25.523+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: customer_rfm.transform manual__2026-09-18T13:38:22.636298+00:00 [queued]>
+[2026-09-18T13:38:25.528+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: customer_rfm.transform manual__2026-09-18T13:38:22.636298+00:00 [queued]>
+[2026-09-18T13:38:25.529+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 2
+[2026-09-18T13:38:25.537+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): transform> on 2026-09-18 13:38:22.636298+00:00
+[2026-09-18T13:38:25.543+0000] {logging_mixin.py:188} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/task/task_runner/standard_task_runner.py:62 DeprecationWarning: This process (pid=596) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2026-09-18T13:38:25.543+0000] {standard_task_runner.py:90} INFO - Running: ['airflow', 'tasks', 'run', 'customer_rfm', 'transform', 'manual__2026-09-18T13:38:22.636298+00:00', '--job-id', '52', '--raw', '--subdir', 'DAGS_FOLDER/dag_customer_rfm_dinda_c.py', '--cfg-path', '/tmp/tmp_j1mufjg']
+[2026-09-18T13:38:25.544+0000] {standard_task_runner.py:64} INFO - Started process 597 to run task
+[2026-09-18T13:38:25.545+0000] {standard_task_runner.py:91} INFO - Job 52: Subtask transform
+[2026-09-18T13:38:25.556+0000] {logging_mixin.py:188} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/settings.py:195 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2026-09-18T13:38:25.583+0000] {task_command.py:426} INFO - Running <TaskInstance: customer_rfm.transform manual__2026-09-18T13:38:22.636298+00:00 [running]> on host 682a1b4f7f24
+[2026-09-18T13:38:25.649+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='customer_rfm' AIRFLOW_CTX_TASK_ID='transform' AIRFLOW_CTX_EXECUTION_DATE='2026-09-18T13:38:22.636298+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-09-18T13:38:22.636298+00:00'
+[2026-09-18T13:38:25.650+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-09-18T13:38:25.669+0000] {base.py:84} INFO - Using connection ID 'adventure_works' for task execution.
+[2026-09-18T13:38:25.682+0000] {logging_mixin.py:188} INFO - [transform] ERROR: column "Recency" does not exist
+LINE 34:                     , "Recency"
+                               ^
+DETAIL:  There is a column named "Recency" in table "trf_customer_rfm", but it cannot be referenced from this part of the query.
+[2026-09-18T13:38:25.682+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-09-18T13:38:25.683+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 401, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 235, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 252, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/dag_customer_rfm_dinda_c.py", line 204, in transform
+    cursor.execute(f"""
+psycopg2.errors.UndefinedColumn: column "Recency" does not exist
+LINE 34:                     , "Recency"
+                               ^
+DETAIL:  There is a column named "Recency" in table "trf_customer_rfm", but it cannot be referenced from this part of the query.
+
+[2026-09-18T13:38:25.695+0000] {taskinstance.py:1206} INFO - Marking task as UP_FOR_RETRY. dag_id=customer_rfm, task_id=transform, run_id=manual__2026-09-18T13:38:22.636298+00:00, execution_date=20260918T133822, start_date=20260918T133825, end_date=20260918T133825
+[2026-09-18T13:38:25.706+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 52 for task transform (column "Recency" does not exist
+LINE 34:                     , "Recency"
+                               ^
+DETAIL:  There is a column named "Recency" in table "trf_customer_rfm", but it cannot be referenced from this part of the query.
+; 597)
+[2026-09-18T13:38:25.718+0000] {local_task_job_runner.py:243} INFO - Task exited with return code 1
+[2026-09-18T13:38:25.737+0000] {taskinstance.py:3503} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-09-18T13:38:25.738+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

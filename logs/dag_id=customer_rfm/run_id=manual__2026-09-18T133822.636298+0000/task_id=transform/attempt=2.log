@@ -1,0 +1,21 @@
+[2026-09-18T13:43:26.478+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-09-18T13:43:26.513+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: customer_rfm.transform manual__2026-09-18T13:38:22.636298+00:00 [queued]>
+[2026-09-18T13:43:26.519+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: customer_rfm.transform manual__2026-09-18T13:38:22.636298+00:00 [queued]>
+[2026-09-18T13:43:26.520+0000] {taskinstance.py:2306} INFO - Starting attempt 2 of 2
+[2026-09-18T13:43:26.528+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): transform> on 2026-09-18 13:38:22.636298+00:00
+[2026-09-18T13:43:26.533+0000] {logging_mixin.py:188} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/task/task_runner/standard_task_runner.py:62 DeprecationWarning: This process (pid=656) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2026-09-18T13:43:26.534+0000] {standard_task_runner.py:64} INFO - Started process 657 to run task
+[2026-09-18T13:43:26.534+0000] {standard_task_runner.py:90} INFO - Running: ['airflow', 'tasks', 'run', 'customer_rfm', 'transform', 'manual__2026-09-18T13:38:22.636298+00:00', '--job-id', '57', '--raw', '--subdir', 'DAGS_FOLDER/dag_customer_rfm_dinda_c.py', '--cfg-path', '/tmp/tmpihqrzcxz']
+[2026-09-18T13:43:26.535+0000] {standard_task_runner.py:91} INFO - Job 57: Subtask transform
+[2026-09-18T13:43:26.547+0000] {logging_mixin.py:188} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/settings.py:195 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2026-09-18T13:43:26.578+0000] {task_command.py:426} INFO - Running <TaskInstance: customer_rfm.transform manual__2026-09-18T13:38:22.636298+00:00 [running]> on host 682a1b4f7f24
+[2026-09-18T13:43:26.654+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='customer_rfm' AIRFLOW_CTX_TASK_ID='transform' AIRFLOW_CTX_EXECUTION_DATE='2026-09-18T13:38:22.636298+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-09-18T13:38:22.636298+00:00'
+[2026-09-18T13:43:26.654+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-09-18T13:43:26.682+0000] {base.py:84} INFO - Using connection ID 'adventure_works' for task execution.
+[2026-09-18T13:43:26.718+0000] {logging_mixin.py:188} INFO - [transform] trf_customer_rfm has been created. Total 7993 rows
+[2026-09-18T13:43:26.718+0000] {python.py:237} INFO - Done. Returned value was: None
+[2026-09-18T13:43:26.720+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-09-18T13:43:26.728+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=customer_rfm, task_id=transform, run_id=manual__2026-09-18T13:38:22.636298+00:00, execution_date=20260918T133822, start_date=20260918T134326, end_date=20260918T134326
+[2026-09-18T13:43:26.751+0000] {local_task_job_runner.py:243} INFO - Task exited with return code 0
+[2026-09-18T13:43:26.766+0000] {taskinstance.py:3503} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2026-09-18T13:43:26.768+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
