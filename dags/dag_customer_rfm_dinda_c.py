@@ -171,9 +171,9 @@ def transform(**kwargs):
       - recency : recency (the latest date when customer did transaction)
       - frequency : frequency (how many times customer did transaction )
       - monetary  : monetary (total amount spent by customer)
-      - r_score : 1-4 from NTILE(4) ORDER BY Recency ASC
-      - f_score : 1-4 FROM NTILE(4) ORDER BY Frequency DESC
-      - m_score : 1-4 from NTILE(4) ORDER BY Monetary DESC
+      - r_score : 1-4 from NTILE(4) ORDER BY Recency DESC
+      - f_score : 1-4 FROM NTILE(4) ORDER BY Frequency ASC
+      - m_score : 1-4 from NTILE(4) ORDER BY Monetary ASC
       - rfm_score : R_Score + F_Score + M_Score 
     Result will be saved in dwh.trf_customer_rfm
     """
