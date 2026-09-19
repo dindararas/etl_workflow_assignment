@@ -259,7 +259,7 @@ def transform(**kwargs):
                 , CASE 
                     WHEN "R_Score" + "F_Score" + "M_Score" > 9 THEN 'Champions'
                     WHEN "R_Score" + "F_Score" + "M_Score" > 6 THEN 'Loyal'
-                    WHEN "R_Score" + "F_Score" + "M_Score" > 4  THEN 'At Risk'
+                    WHEN "R_Score" + "F_Score" + "M_Score" >= 4  THEN 'At Risk'
                     ELSE 'Lost'
                 END AS "Segment"
             FROM rfm_calculation;
